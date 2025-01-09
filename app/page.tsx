@@ -1,5 +1,7 @@
 import HomePage from "@/components/pages/HomePage";
+import ProfilePage from "@/components/pages/ProfilePage";
 import { TabsContent } from "@/components/ui/tabs";
+import UploadImageComponent from "@/components/UploadImageComponent";
 
 export default function Home() {
   return (
@@ -9,12 +11,12 @@ export default function Home() {
           <HomePage />
         </TabsContent>
 
-        <TabsContent value="scan">
-          Camera
+        <TabsContent value="scan" className="h-full">
+          <UploadImageComponent />
         </TabsContent>
 
         <TabsContent value="profile">
-          Foirth
+          <ProfilePage />
         </TabsContent>
       </div>
     </main>
