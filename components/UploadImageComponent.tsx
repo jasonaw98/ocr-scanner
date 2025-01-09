@@ -1,38 +1,12 @@
-"use client";
-import Image from "next/image";
-import React, { useState, useRef } from "react";
-import { Button } from "./ui/button";
-
-interface ImageObject {
-  imagePreview: string;
-  imageFile: File;
-}
+import OcrReader from "./OcrReader";
 
 const UploadImageComponent = () => {
-  const [imageObject, setImageObject] = useState<ImageObject | null>(null);
-
-  const handleFileInput = useRef<HTMLInputElement>(null);
-
-  const handleClick = () => {
-    if (handleFileInput.current) {
-      handleFileInput.current.click();
-    }
-  };
-
-  const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (event.target.files && event.target.files[0]) {
-      const file = event.target.files[0];
-      setImageObject({
-        imagePreview: URL.createObjectURL(file),
-        imageFile: file,
-      });
-    }
-  };
 
   return (
-    <div className="flex flex-col items-center h-full gap-8 pt-8">
+    <div className="flex flex-col items-center h-full gap-4">
       <h1 className="text-xl font-bold">Scan Documents</h1>
-      <input
+      <OcrReader />
+      {/* <input
         style={{ display: "none" }}
         type="file"
         accept="image/*"
@@ -49,7 +23,7 @@ const UploadImageComponent = () => {
           className="rounded-md"
         />
       )}
-      <Button onClick={handleClick}>Upload Photo</Button>
+      <Button onClick={handleClick}>Upload Photo</Button> */}
     </div>
   );
 };
