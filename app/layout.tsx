@@ -32,14 +32,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full">
+    <html lang="en" className="h-full overflow-hidden">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased h-full`}
       >
-        <Tabs defaultValue="home" className="flex flex-col h-full justify-between">
-        {children}
-        <TabListNav />
-      </Tabs>
+        <Tabs
+          defaultValue="home"
+          className="flex flex-col h-full justify-between"
+        >
+          <div className="h-full overflow-y-auto">{children}</div>
+          <TabListNav />
+        </Tabs>
       </body>
     </html>
   );

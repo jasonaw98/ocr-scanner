@@ -9,6 +9,11 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [{ hostname: "https://example.com/**" }],
   },
+  experimental: {
+    serverActions: {
+      bodySizeLimit: '10mb',
+    }
+  },
 };
 
 export default nextConfig;

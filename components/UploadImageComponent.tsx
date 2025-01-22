@@ -1,11 +1,11 @@
-import OcrReader from "./OcrReader";
+import PassportReader from "./PassportReader";
 
 const UploadImageComponent = () => {
 
   return (
     <div className="flex flex-col items-center h-full gap-4">
       <h1 className="text-xl font-bold">Scan Documents</h1>
-      <OcrReader />
+      <PassportReader />
       {/* <input
         style={{ display: "none" }}
         type="file"
